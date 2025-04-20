@@ -4,12 +4,24 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Définition des beans -->
-    <bean id="produitListDAO" class="calcpp.dao.ProduitDaoImpl" />
+    <!-- Bean for ProduitDaoImpl with constructor arguments -->
+    <bean id="produitDAOImpl" class="calcpp.dao.ProduitDaoImpl">
+        <constructor-arg value="1" />
+        <constructor-arg value="Ordinateur portable" />
+        <constructor-arg value="2500" />
+    </bean>
+
+    <!-- Bean for ProduitListDAOImpl with ProduitDaoImpl injected -->
+    <bean id="produitListDAO" class="calcpp.dao.ProduitListDAOImpl" />
+
+    <!-- Bean for ProduitServiceImpl -->
     <bean id="produitService" class="calcpp.metier.ProduitServiceImpl">
         <constructor-arg ref="produitListDAO" />
     </bean>
+
+    <!-- Bean for ProduitControllerImpl -->
     <bean id="produitController" class="calcpp.controller.ProduitControllerImpl">
         <constructor-arg ref="produitService" />
     </bean>
+
 </beans>

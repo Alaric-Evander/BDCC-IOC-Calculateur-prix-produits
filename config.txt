@@ -1,0 +1,3 @@
+controller=calcpp.controller.ProduitControllerImpl
+service=calcpp.metier.ProduitServiceImpl
+dao=calcpp.dao.ProduitDaoImpl

@@ -14,8 +14,6 @@ public class ProduitServiceImpl implements IProduitService {
         this.produitListDao = produitListDAO;
     }
 
-    public ProduitServiceImpl(ProduitDaoImpl produitDao) {
-    }
 
     @Override
     public List<IProduitDAO> recupererTousLesProduits() {
