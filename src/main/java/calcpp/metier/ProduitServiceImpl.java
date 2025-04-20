@@ -3,15 +3,17 @@ package calcpp.metier;
 
 import calcpp.dao.IProduitDAO;
 import calcpp.dao.IProduitListDao;
-import calcpp.dao.IProduitServiceDAO;
 
 import java.util.List;
 import java.util.Optional;
 
-public class ProduitServiceImpl implements IProduitServiceDAO {
+public class ProduitServiceImpl implements IProduitService {
     private IProduitListDao produitListDao;
     public ProduitServiceImpl(IProduitListDao produitListDAO){
         this.produitListDao = produitListDAO;
+    }
+
+    public ProduitServiceImpl(IProduitDAO produitDAO) {
     }
 
     @Override
