@@ -1,13 +1,12 @@
 package calcpp.controller;
 
-import calcpp.dao.IProduitControllerDAO;
 import calcpp.dao.IProduitDAO;
 import calcpp.metier.IProduitService;
 
 import java.util.List;
 import java.util.Optional;
 
-public class ProduitControllerImpl implements IProduitControllerDAO {
+public class ProduitControllerImpl implements IProduitController {
     private final IProduitService produitService;
 
     public ProduitControllerImpl(IProduitService produitService) {

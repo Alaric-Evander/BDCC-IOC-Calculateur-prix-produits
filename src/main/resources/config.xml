@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- Définition des beans -->
+    <bean id="produitListDAO" class="calcpp.dao.ProduitDaoImpl" />
+    <bean id="produitService" class="calcpp.metier.ProduitServiceImpl">
+        <constructor-arg ref="produitListDAO" />
+    </bean>
+    <bean id="produitController" class="calcpp.controller.ProduitControllerImpl">
+        <constructor-arg ref="produitService" />
+    </bean>
 </beans>
