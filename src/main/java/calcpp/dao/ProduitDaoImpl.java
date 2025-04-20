@@ -11,9 +11,6 @@ public class ProduitDaoImpl implements IProduitDAO{
         this.prixHT = prixHT;
     }
 
-    public ProduitDaoImpl() {
-
-    }
 
     @Override
     public Long getId() {
